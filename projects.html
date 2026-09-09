@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects · The Engineers</title>
+  <meta name="description" content="Projects page starter for The Engineers." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">The Engineers</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a aria-current="page" href="projects.html">Work</a>
+        <a href="index.html#collective">Collective</a>
+        <a href="index.html#research">Research</a>
+        <a href="#projects-note">About</a>
+      </nav>
+      <a class="button button-primary topbar-action" href="index.html#about">Report for work</a>
+    </header>
+
+    <main class="projects-layout">
+      <section class="section-heading">
+        <p class="eyebrow">Work list</p>
+        <h1>Projects</h1>
+        <p class="lede">
+          This page is only the shell for real projects. It intentionally stays empty until
+          there is actual work to show.
+        </p>
+      </section>
+
+      <section class="filters" aria-label="Project filters">
+        <button class="chip chip-active" type="button">All</button>
+        <button class="chip" type="button">Urgent</button>
+        <button class="chip" type="button">In development</button>
+        <button class="chip" type="button">Research</button>
+        <button class="chip" type="button">Needs contributors</button>
+        <button class="chip" type="button">Completed</button>
+      </section>
+
+      <section class="projects-toolbar" aria-label="Project search and sorting">
+        <label class="toolbar-search">
+          <span class="sr-only">Search projects</span>
+          <input type="search" placeholder="Search projects..." aria-label="Search projects" />
+        </label>
+        <div class="toolbar-actions" aria-label="Project filter groups">
+          <button class="chip" type="button">Categories</button>
+          <button class="chip" type="button">Skills</button>
+          <button class="chip" type="button">Equipment</button>
+          <button class="chip" type="button">Time</button>
+          <button class="chip" type="button">Location</button>
+        </div>
+        <div class="toolbar-sort">
+          <span>Sort:</span>
+          <button class="chip" type="button">Relevance</button>
+        </div>
+      </section>
+
+      <section class="empty-state" id="projects-note" aria-label="Projects empty state">
+        <div class="empty-state-card">
+          <p class="card-label">Nothing added yet</p>
+          <h2>Use this space for real projects when they exist.</h2>
+          <p>
+            The layout is ready for a future list, search, and filters, but the content stays
+            blank until you have actual entries to publish.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

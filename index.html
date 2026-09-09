@@ -3,30 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guild</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #111111;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 10vw, 6rem);
-      font-weight: 700;
-      letter-spacing: 0.03em;
-    }
-  </style>
+  <title>The Engineers · Guild</title>
+  <meta name="description" content="The Engineers homepage draft." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Guild</h1>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">The Engineers</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="projects.html">Work</a>
+        <a href="#collective">Collective</a>
+        <a href="#research">Research</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="button button-primary topbar-action" href="projects.html">Report for work</a>
+    </header>
+
+    <main class="home-layout">
+      <section class="hero-copy">
+        <p class="eyebrow">A global engineering collective</p>
+        <h1>Engineers: we have work to do.</h1>
+        <p class="lede">
+          A unified place for real engineering work. Find the work, contribute when you can,
+          document what matters, and leave the collective better than you found it.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="projects.html">Report for work</a>
+          <a class="button button-secondary" href="#about">Explore the draft</a>
+        </div>
+
+        <p class="small-note" id="collective">
+          This is a rough draft, not a finished system.
+        </p>
+      </section>
+
+      <aside class="hero-visual" aria-label="Abstract illustration">
+        <div class="assembly assembly-top"></div>
+        <div class="assembly assembly-mid"></div>
+        <div class="assembly assembly-bottom"></div>
+        <div class="node node-a"></div>
+        <div class="node node-b"></div>
+        <div class="node node-c"></div>
+        <div class="node node-d"></div>
+      </aside>
+    </main>
+
+    <section class="info-grid" id="about">
+      <article class="info-card">
+        <p class="card-label">Purpose</p>
+        <h2>A clear starting point.</h2>
+        <p>
+          The layout is intentionally simple so it can become a real site instead of a pile
+          of placeholder content.
+        </p>
+      </article>
+      <article class="info-card">
+        <p class="card-label" id="research">Next step</p>
+        <h2>Fill it only with real work.</h2>
+        <p>
+          The Projects page is a basic frame only. No fake projects, no fake counts, and no
+          invented status cards.
+        </p>
+      </article>
+    </section>
+  </div>
 </body>
 </html>
