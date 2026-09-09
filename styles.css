@@ -1,14 +1,14 @@
 :root {
   color-scheme: light;
-  --bg: #f4f3ef;
-  --panel: rgba(255, 255, 255, 0.74);
-  --panel-strong: rgba(251, 249, 244, 0.96);
-  --text: #142b2a;
-  --muted: #5d6d6b;
-  --line: rgba(20, 43, 42, 0.12);
-  --accent: #154b3a;
-  --accent-2: #c9a86a;
-  --shadow: 0 24px 60px rgba(20, 43, 42, 0.12);
+  --bg: #fcfbf7;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-strong: rgba(255, 255, 255, 0.96);
+  --text: #112522;
+  --muted: #5e6f6b;
+  --line: rgba(17, 37, 34, 0.14);
+  --accent: #0d2f26;
+  --accent-2: #ccb37d;
+  --shadow: 0 22px 48px rgba(17, 37, 34, 0.08);
 }
 
 * {
@@ -22,12 +22,12 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(201, 168, 106, 0.2), transparent 34%),
-    radial-gradient(circle at 85% 12%, rgba(21, 75, 58, 0.14), transparent 24%),
-    linear-gradient(180deg, #f8f6f1 0%, #f2eee4 100%);
+    radial-gradient(circle at top left, rgba(204, 179, 125, 0.1), transparent 32%),
+    radial-gradient(circle at 86% 10%, rgba(13, 47, 38, 0.08), transparent 24%),
+    linear-gradient(180deg, #fffefb 0%, #f9f7f0 100%);
 }
 
 a {
@@ -51,8 +51,8 @@ a {
   gap: 1rem;
   padding: 1.1rem 0 1rem;
   margin-bottom: 0;
-  background: transparent;
-  backdrop-filter: none;
+  background: linear-gradient(180deg, rgba(252, 251, 247, 0.96), rgba(252, 251, 247, 0.86));
+  backdrop-filter: blur(10px);
   box-shadow: none;
 }
 
@@ -68,10 +68,11 @@ a {
 
 .brand {
   font-family: "Orbitron", "Avenir Next", sans-serif;
-  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-size: clamp(1rem, 1.5vw, 1.22rem);
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--accent);
 }
 
 .topbar-action {
@@ -80,13 +81,14 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.4rem;
   flex-wrap: wrap;
 }
 
 .nav-links a {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  font-weight: 500;
   padding: 0.4rem 0;
   border-radius: 0;
 }
@@ -99,9 +101,9 @@ a {
 .home-layout {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
-  gap: 1.25rem;
+  gap: 1.6rem;
   align-items: stretch;
-  padding-top: 1.5rem;
+  padding-top: 2.1rem;
 }
 
 .hero-copy,
@@ -115,8 +117,8 @@ a {
 }
 
 .hero-copy {
-  padding: clamp(1.5rem, 3vw, 3rem);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.6));
+  padding: clamp(1.9rem, 3.3vw, 3.4rem);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.72));
 }
 
 .eyebrow,
@@ -134,13 +136,13 @@ a {
 .empty-state-card h2,
 .info-card h2 {
   margin: 0;
-  line-height: 0.96;
+  line-height: 0.94;
   letter-spacing: -0.04em;
 }
 
 .hero-copy h1 {
   max-width: 9.5ch;
-  font-size: clamp(3.1rem, 8vw, 7rem);
+  font-size: clamp(2.7rem, 6.8vw, 5.8rem);
   text-transform: uppercase;
 }
 
@@ -150,16 +152,16 @@ a {
 
 .lede {
   max-width: 54ch;
-  margin: 1.15rem 0 0;
-  font-size: clamp(1rem, 1.8vw, 1.16rem);
-  line-height: 1.6;
+  margin: 1.35rem 0 0;
+  font-size: clamp(1.12rem, 2vw, 1.34rem);
+  line-height: 1.72;
   color: var(--muted);
 }
 
 .small-note {
-  margin: 1.25rem 0 0;
+  margin: 1.5rem 0 0;
   padding-left: 1rem;
-  border-left: 3px solid rgba(21, 75, 58, 0.2);
+  border-left: 3px solid rgba(13, 47, 38, 0.18);
   color: var(--muted);
 }
 
@@ -177,9 +179,9 @@ a {
 
 .hero-actions {
   display: flex;
-  gap: 0.9rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
 }
 
 .button,
@@ -188,7 +190,7 @@ a {
   align-items: center;
   justify-content: center;
   min-height: 46px;
-  padding: 0.8rem 1.1rem;
+  padding: 0.8rem 1.15rem;
   border-radius: 999px;
   border: 1px solid var(--line);
   font: inherit;
@@ -206,10 +208,11 @@ a {
   background: var(--accent);
   color: #fff;
   border-color: transparent;
+  box-shadow: 0 10px 24px rgba(13, 47, 38, 0.16);
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .hero-visual {
@@ -217,8 +220,8 @@ a {
   min-height: 520px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 12%, rgba(21, 75, 58, 0.12), transparent 26%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.38));
+    radial-gradient(circle at 50% 12%, rgba(13, 47, 38, 0.08), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.48));
 }
 
 .assembly,
@@ -266,7 +269,8 @@ a {
 .node-d { top: 18%; left: 66%; }
 
 .info-grid,
-.projects-layout {
+.projects-layout,
+.mission-layout {
   margin-top: 1.25rem;
 }
 
@@ -299,6 +303,12 @@ a {
   padding-top: 1.5rem;
 }
 
+.mission-layout {
+  display: grid;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
 .section-heading {
   padding: 1rem 0 0.35rem;
 }
@@ -320,14 +330,14 @@ a {
 }
 
 .chip {
-  background: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.8);
   color: var(--muted);
 }
 
 .chip-active {
   color: var(--text);
-  background: rgba(23, 77, 60, 0.1);
-  border-color: rgba(23, 77, 60, 0.18);
+  background: rgba(13, 47, 38, 0.08);
+  border-color: rgba(13, 47, 38, 0.16);
 }
 
 .empty-state {
@@ -338,6 +348,19 @@ a {
 
 .empty-state-card {
   max-width: 760px;
+}
+
+.mission-card {
+  max-width: 840px;
+  min-height: 320px;
+  display: grid;
+  align-content: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.82));
+}
+
+.mission-heading .lede {
+  max-width: 44ch;
 }
 
 .empty-state-card p {
@@ -356,7 +379,7 @@ a {
   padding: 0 1rem;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.92);
   color: var(--text);
   font: inherit;
 }
@@ -407,7 +430,7 @@ a {
 
   .hero-copy h1 {
     max-width: none;
-    font-size: clamp(2.8rem, 15vw, 4.7rem);
+    font-size: clamp(2.45rem, 13vw, 4.25rem);
   }
 
   .hero-visual {
