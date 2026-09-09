@@ -25,9 +25,9 @@ body {
   font-family: "Space Grotesk", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(204, 179, 125, 0.1), transparent 32%),
-    radial-gradient(circle at 86% 10%, rgba(13, 47, 38, 0.08), transparent 24%),
-    linear-gradient(180deg, #fffefb 0%, #f9f7f0 100%);
+    radial-gradient(circle at top left, rgba(204, 179, 125, 0.08), transparent 30%),
+    radial-gradient(circle at 86% 10%, rgba(13, 47, 38, 0.05), transparent 22%),
+    linear-gradient(180deg, #faf8f1 0%, #f5f1e7 100%);
 }
 
 a {
@@ -101,13 +101,12 @@ a {
 .home-layout {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
-  gap: 1.6rem;
+  gap: 2rem;
   align-items: stretch;
-  padding-top: 2.1rem;
+  padding-top: 2.4rem;
 }
 
 .hero-copy,
-.hero-visual,
 .info-card,
 .empty-state-card {
   border: 1px solid var(--line);
@@ -117,8 +116,11 @@ a {
 }
 
 .hero-copy {
-  padding: clamp(1.9rem, 3.3vw, 3.4rem);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.72));
+  padding: clamp(1.2rem, 2vw, 1.8rem) 0 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .eyebrow,
@@ -142,7 +144,7 @@ a {
 
 .hero-copy h1 {
   max-width: 9.5ch;
-  font-size: clamp(2.7rem, 6.8vw, 5.8rem);
+  font-size: clamp(3rem, 7.2vw, 6.2rem);
   text-transform: uppercase;
 }
 
@@ -217,11 +219,28 @@ a {
 
 .hero-visual {
   position: relative;
-  min-height: 520px;
+  min-height: 560px;
   overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
   background:
-    radial-gradient(circle at 50% 12%, rgba(13, 47, 38, 0.08), transparent 26%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.48));
+    radial-gradient(circle at 50% 12%, rgba(13, 47, 38, 0.06), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+}
+
+.hero-annotation {
+  position: absolute;
+  right: 0;
+  bottom: 2.5rem;
+  max-width: 12rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.hero-annotation p {
+  margin: 0;
 }
 
 .assembly,
@@ -272,6 +291,106 @@ a {
 .projects-layout,
 .mission-layout {
   margin-top: 1.25rem;
+}
+
+.home-metrics,
+.featured-work {
+  margin-top: 2rem;
+}
+
+.home-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.home-metrics div {
+  min-width: 0;
+}
+
+.home-metrics strong {
+  display: block;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.home-metrics span {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.featured-work {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.featured-work-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.featured-work-head h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.featured-copy {
+  max-width: 42rem;
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.featured-link {
+  white-space: nowrap;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.featured-rail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.featured-slot {
+  min-width: 0;
+}
+
+.featured-slot-media {
+  min-height: 108px;
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(13, 47, 38, 0.04), rgba(204, 179, 125, 0.12)),
+    repeating-linear-gradient(90deg, rgba(17, 37, 34, 0.03) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(0deg, rgba(17, 37, 34, 0.03) 0 1px, transparent 1px 26px),
+    #f8f5ec;
+}
+
+.featured-slot .project-tag {
+  margin-top: 0.85rem;
+}
+
+.featured-slot h3 {
+  margin: 0.7rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.15;
+}
+
+.featured-slot p:not(.project-tag) {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .info-grid {
@@ -616,6 +735,16 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .home-metrics,
+  .featured-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured-work-head {
+    align-items: start;
+    flex-direction: column;
+  }
+
   .work-shell,
   .project-grid {
     grid-template-columns: 1fr;
@@ -661,6 +790,17 @@ a {
   .hero-copy h1 {
     max-width: none;
     font-size: clamp(2.45rem, 13vw, 4.25rem);
+  }
+
+  .home-metrics,
+  .featured-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-annotation {
+    position: static;
+    max-width: none;
+    margin-top: 1rem;
   }
 
   .hero-visual {
