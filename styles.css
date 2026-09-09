@@ -1,8 +1,8 @@
 :root {
   color-scheme: light;
-  --bg: #fcfbf7;
-  --panel: rgba(255, 255, 255, 0.82);
-  --panel-strong: rgba(255, 255, 255, 0.96);
+  --bg: #fffef9;
+  --panel: #fffefb;
+  --panel-strong: #ffffff;
   --text: #112522;
   --muted: #5e6f6b;
   --line: rgba(17, 37, 34, 0.14);
@@ -24,10 +24,7 @@ body {
   min-height: 100vh;
   font-family: "Space Grotesk", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(204, 179, 125, 0.08), transparent 30%),
-    radial-gradient(circle at 86% 10%, rgba(13, 47, 38, 0.05), transparent 22%),
-    linear-gradient(180deg, #faf8f1 0%, #f5f1e7 100%);
+  background: var(--bg);
 }
 
 a {
@@ -51,8 +48,8 @@ a {
   gap: 1rem;
   padding: 1.1rem 0 1rem;
   margin-bottom: 0;
-  background: linear-gradient(180deg, rgba(252, 251, 247, 0.96), rgba(252, 251, 247, 0.86));
-  backdrop-filter: blur(10px);
+  background: var(--bg);
+  backdrop-filter: none;
   box-shadow: none;
 }
 
@@ -214,7 +211,7 @@ a {
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--panel-strong);
 }
 
 .hero-visual {
@@ -374,7 +371,7 @@ a {
     linear-gradient(135deg, rgba(13, 47, 38, 0.04), rgba(204, 179, 125, 0.12)),
     repeating-linear-gradient(90deg, rgba(17, 37, 34, 0.03) 0 1px, transparent 1px 26px),
     repeating-linear-gradient(0deg, rgba(17, 37, 34, 0.03) 0 1px, transparent 1px 26px),
-    #f8f5ec;
+    #fffef9;
 }
 
 .featured-slot .project-tag {
@@ -449,7 +446,7 @@ a {
 }
 
 .chip {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--panel-strong);
   color: var(--muted);
 }
 
@@ -474,8 +471,7 @@ a {
   min-height: 320px;
   display: grid;
   align-content: center;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.82));
+  background: var(--panel-strong);
 }
 
 .mission-heading .lede {
@@ -567,7 +563,7 @@ a {
   padding: 1.2rem;
   border: 1px solid var(--line);
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.78));
+  background: var(--panel-strong);
   box-shadow: var(--shadow);
 }
 
@@ -596,7 +592,7 @@ a {
 
 .toolbar-button {
   min-width: 148px;
-  background: rgba(255, 255, 255, 0.86);
+  background: var(--panel-strong);
 }
 
 .toolbar-summary {
@@ -625,7 +621,7 @@ a {
   height: 44px;
   border-radius: 12px;
   border-color: var(--line);
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--panel-strong);
 }
 
 .view-button::before,
@@ -666,7 +662,7 @@ a {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.8));
+  background: var(--panel-strong);
   box-shadow: var(--shadow);
 }
 
@@ -707,7 +703,7 @@ a {
   padding: 0 1rem;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--panel-strong);
   color: var(--text);
   font: inherit;
 }
