@@ -38,24 +38,23 @@ a {
 .page-shell {
   width: min(1280px, calc(100vw - 2rem));
   margin: 0 auto;
-  padding: 1rem 0 2rem;
+  padding: 0 0 2rem;
 }
 
 .topbar {
   position: sticky;
-  top: 1rem;
+  top: 0;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.9rem 1.15rem;
-  margin-bottom: 1.25rem;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(18px);
-  box-shadow: var(--shadow);
+  padding: 1.1rem 0 1rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
 }
 
 .brand {
@@ -91,6 +90,7 @@ a {
   grid-template-columns: 1.08fr 0.92fr;
   gap: 1.25rem;
   align-items: stretch;
+  padding-top: 1.5rem;
 }
 
 .hero-copy,
@@ -285,6 +285,7 @@ a {
 .projects-layout {
   display: grid;
   gap: 1rem;
+  padding-top: 1.5rem;
 }
 
 .section-heading {
@@ -390,6 +391,7 @@ a {
     position: static;
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 1rem;
   }
 
   .hero-copy h1 {
