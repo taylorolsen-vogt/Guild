@@ -51,16 +51,27 @@ a {
   gap: 1rem;
   padding: 1.1rem 0 1rem;
   margin-bottom: 0;
-  border-bottom: 1px solid var(--line);
   background: transparent;
   backdrop-filter: none;
   box-shadow: none;
 }
 
+.topbar::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100vw;
+  transform: translateX(-50%);
+  border-bottom: 1px solid var(--line);
+}
+
 .brand {
-  font-size: 1.05rem;
+  font-family: "Orbitron", "Avenir Next", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
   font-weight: 800;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .topbar-action {
@@ -76,13 +87,13 @@ a {
 .nav-links a {
   color: var(--muted);
   font-size: 0.95rem;
-  padding: 0.4rem 0.55rem;
-  border-radius: 999px;
+  padding: 0.4rem 0;
+  border-radius: 0;
 }
 
 .nav-links a[aria-current="page"] {
   color: var(--text);
-  background: rgba(23, 77, 60, 0.08);
+  background: transparent;
 }
 
 .home-layout {
