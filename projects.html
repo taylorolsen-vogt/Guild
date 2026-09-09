@@ -31,41 +31,118 @@
         </p>
       </section>
 
-      <section class="filters" aria-label="Project filters">
-        <button class="chip chip-active" type="button">All</button>
-        <button class="chip" type="button">Urgent</button>
-        <button class="chip" type="button">In development</button>
-        <button class="chip" type="button">Research</button>
-        <button class="chip" type="button">Needs contributors</button>
-        <button class="chip" type="button">Completed</button>
-      </section>
+      <section class="work-shell" id="projects-note">
+        <aside class="work-sidebar" aria-label="Project categories and filters">
+          <section class="sidebar-block">
+            <h2>Categories</h2>
+            <div class="sidebar-list" role="list">
+              <button class="sidebar-item sidebar-item-active" type="button">All categories</button>
+              <button class="sidebar-item" type="button">Climate</button>
+              <button class="sidebar-item" type="button">Health</button>
+              <button class="sidebar-item" type="button">Education</button>
+              <button class="sidebar-item" type="button">Accessibility</button>
+              <button class="sidebar-item" type="button">Sustainability</button>
+              <button class="sidebar-item" type="button">Space</button>
+              <button class="sidebar-item" type="button">Communities</button>
+              <button class="sidebar-item" type="button">Tools</button>
+            </div>
+          </section>
 
-      <section class="projects-toolbar" aria-label="Project search and sorting">
-        <label class="toolbar-search">
-          <span class="sr-only">Search projects</span>
-          <input type="search" placeholder="Search projects..." aria-label="Search projects" />
-        </label>
-        <div class="toolbar-actions" aria-label="Project filter groups">
-          <button class="chip" type="button">Categories</button>
-          <button class="chip" type="button">Skills</button>
-          <button class="chip" type="button">Equipment</button>
-          <button class="chip" type="button">Time</button>
-          <button class="chip" type="button">Location</button>
-        </div>
-        <div class="toolbar-sort">
-          <span>Sort:</span>
-          <button class="chip" type="button">Relevance</button>
-        </div>
-      </section>
+          <section class="sidebar-block">
+            <h2>Filter by</h2>
+            <div class="filter-stack" role="list">
+              <button class="filter-row" type="button">Skills</button>
+              <button class="filter-row" type="button">Equipment</button>
+              <button class="filter-row" type="button">Budget</button>
+              <button class="filter-row" type="button">Time commitment</button>
+            </div>
+          </section>
 
-      <section class="empty-state" id="projects-note" aria-label="Projects empty state">
-        <div class="empty-state-card">
-          <p class="card-label">Nothing added yet</p>
-          <h2>Use this space for real projects when they exist.</h2>
-          <p>
-            The layout is ready for a future list, search, and filters, but the content stays
-            blank until you have actual entries to publish.
-          </p>
+          <section class="sidebar-callout" aria-label="Recommendations placeholder">
+            <p class="card-label">Recommendation engine</p>
+            <h3>Not sure where to start?</h3>
+            <p>
+              Recommendations can live here later, once there is enough real project data to
+              support them.
+            </p>
+            <button class="button button-primary" type="button">Get recommendations</button>
+          </section>
+        </aside>
+
+        <div class="work-main">
+          <section class="projects-toolbar" aria-label="Project search and sorting">
+            <div class="toolbar-topline">
+              <label class="toolbar-search toolbar-search-wide">
+                <span class="sr-only">Search projects</span>
+                <input type="search" placeholder="Search projects, topics, or keywords..." aria-label="Search projects" />
+              </label>
+              <button class="button toolbar-button" type="button">Surprise me</button>
+            </div>
+
+            <div class="toolbar-summary">
+              <p class="results-label">Projects</p>
+              <div class="toolbar-summary-actions">
+                <div class="toolbar-sort">
+                  <span>Sort by</span>
+                  <button class="chip" type="button">Most relevant</button>
+                </div>
+                <div class="view-toggle" aria-label="View style">
+                  <button class="view-button view-button-active" type="button" aria-label="Grid view"></button>
+                  <button class="view-button" type="button" aria-label="List view"></button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="project-grid" aria-label="Project card layout placeholder">
+            <article class="project-card project-card-empty">
+              <div class="project-card-media"></div>
+              <div class="project-card-body">
+                <p class="project-tag">Awaiting real project</p>
+                <h3>First project card goes here.</h3>
+                <p>
+                  Use this slot when the first published project is ready. Until then, keep the
+                  structure visible and the content honest.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card project-card-empty">
+              <div class="project-card-media"></div>
+              <div class="project-card-body">
+                <p class="project-tag">Awaiting real project</p>
+                <h3>Second card reserved.</h3>
+                <p>
+                  This grid is intentionally architectural right now. No invented initiatives,
+                  no placeholder teams, and no fake progress indicators.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card project-card-empty">
+              <div class="project-card-media"></div>
+              <div class="project-card-body">
+                <p class="project-tag">Awaiting real project</p>
+                <h3>Third card reserved.</h3>
+                <p>
+                  Real projects can replace these shells one by one without changing the layout
+                  system around them.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card project-card-empty">
+              <div class="project-card-media"></div>
+              <div class="project-card-body">
+                <p class="project-tag">Awaiting real project</p>
+                <h3>Fourth card reserved.</h3>
+                <p>
+                  The surface is ready for future filtering, categories, and saved views once
+                  the work exists.
+                </p>
+              </div>
+            </article>
+          </section>
         </div>
       </section>
     </main>
