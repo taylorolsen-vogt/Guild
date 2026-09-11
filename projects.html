@@ -4,148 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects · The Engineers</title>
-  <meta name="description" content="Projects page starter for The Engineers." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Explore engineering projects. Read a plan and choose a task." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="public-theme.css" />
 </head>
-<body>
+<body class="work-page technical-page">
   <div class="page-shell">
     <header class="topbar">
       <a class="brand" href="index.html">The Engineers</a>
       <nav class="nav-links" aria-label="Primary">
-        <a aria-current="page" href="projects.html">Work</a>
-        <a href="mission.html">Mission Statement</a>
+        <a aria-current="page" href="projects.html">Projects</a>
       </nav>
-      <a class="button button-primary topbar-action" href="mission.html">Report for work</a>
     </header>
 
-    <main class="projects-layout">
-      <section class="section-heading">
-        <p class="eyebrow">Work list</p>
-        <h1>Projects</h1>
-        <p class="lede">
-          This page is only the shell for real projects. It intentionally stays empty until
-          there is actual work to show.
-        </p>
-      </section>
-
-      <section class="work-shell" id="projects-note">
-        <aside class="work-sidebar" aria-label="Project categories and filters">
-          <section class="sidebar-block">
-            <h2>Categories</h2>
-            <div class="sidebar-list" role="list">
-              <button class="sidebar-item sidebar-item-active" type="button">All categories</button>
-              <button class="sidebar-item" type="button">Climate</button>
-              <button class="sidebar-item" type="button">Health</button>
-              <button class="sidebar-item" type="button">Education</button>
-              <button class="sidebar-item" type="button">Accessibility</button>
-              <button class="sidebar-item" type="button">Sustainability</button>
-              <button class="sidebar-item" type="button">Space</button>
-              <button class="sidebar-item" type="button">Communities</button>
-              <button class="sidebar-item" type="button">Tools</button>
-            </div>
-          </section>
-
-          <section class="sidebar-block">
-            <h2>Filter by</h2>
-            <div class="filter-stack" role="list">
-              <button class="filter-row" type="button">Skills</button>
-              <button class="filter-row" type="button">Equipment</button>
-              <button class="filter-row" type="button">Budget</button>
-              <button class="filter-row" type="button">Time commitment</button>
-            </div>
-          </section>
-
-          <section class="sidebar-callout" aria-label="Recommendations placeholder">
-            <p class="card-label">Recommendation engine</p>
-            <h3>Not sure where to start?</h3>
-            <p>
-              Recommendations can live here later, once there is enough real project data to
-              support them.
-            </p>
-            <button class="button button-primary" type="button">Get recommendations</button>
-          </section>
-        </aside>
-
-        <div class="work-main">
-          <section class="projects-toolbar" aria-label="Project search and sorting">
-            <div class="toolbar-topline">
-              <label class="toolbar-search toolbar-search-wide">
-                <span class="sr-only">Search projects</span>
-                <input type="search" placeholder="Search projects, topics, or keywords..." aria-label="Search projects" />
-              </label>
-              <button class="button toolbar-button" type="button">Surprise me</button>
-            </div>
-
-            <div class="toolbar-summary">
-              <p class="results-label">Projects</p>
-              <div class="toolbar-summary-actions">
-                <div class="toolbar-sort">
-                  <span>Sort by</span>
-                  <button class="chip" type="button">Most relevant</button>
-                </div>
-                <div class="view-toggle" aria-label="View style">
-                  <button class="view-button view-button-active" type="button" aria-label="Grid view"></button>
-                  <button class="view-button" type="button" aria-label="List view"></button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="project-grid" aria-label="Project card layout placeholder">
-            <article class="project-card project-card-empty">
-              <div class="project-card-media"></div>
-              <div class="project-card-body">
-                <p class="project-tag">Awaiting real project</p>
-                <h3>First project card goes here.</h3>
-                <p>
-                  Use this slot when the first published project is ready. Until then, keep the
-                  structure visible and the content honest.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card project-card-empty">
-              <div class="project-card-media"></div>
-              <div class="project-card-body">
-                <p class="project-tag">Awaiting real project</p>
-                <h3>Second card reserved.</h3>
-                <p>
-                  This grid is intentionally architectural right now. No invented initiatives,
-                  no placeholder teams, and no fake progress indicators.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card project-card-empty">
-              <div class="project-card-media"></div>
-              <div class="project-card-body">
-                <p class="project-tag">Awaiting real project</p>
-                <h3>Third card reserved.</h3>
-                <p>
-                  Real projects can replace these shells one by one without changing the layout
-                  system around them.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card project-card-empty">
-              <div class="project-card-media"></div>
-              <div class="project-card-body">
-                <p class="project-tag">Awaiting real project</p>
-                <h3>Fourth card reserved.</h3>
-                <p>
-                  The surface is ready for future filtering, categories, and saved views once
-                  the work exists.
-                </p>
-              </div>
-            </article>
-          </section>
+    <main class="project-index">
+      <header class="project-index-head">
+        <div>
+          <h1>Projects</h1>
+          <p>Find a project, read the plan, and choose a task.</p>
         </div>
+        <span id="project-total" role="status">Loading projects…</span>
+      </header>
+
+      <div class="project-toolbar">
+        <label class="project-search">
+          <span class="sr-only">Search projects</span>
+          <input id="project-search" type="search" placeholder="Search projects" aria-label="Search projects" />
+        </label>
+        <label class="filter-field" for="project-filters">Category
+          <select id="project-filters"><option value="all">All categories</option></select>
+        </label>
+        <label class="filter-field" for="difficulty-filter">Build difficulty
+          <select id="difficulty-filter" aria-describedby="difficulty-note">
+            <option value="all">All difficulties</option>
+            <option value="easy">Easy · Basic tools & materials</option>
+            <option value="medium">Medium · Practical experience</option>
+            <option value="hard">Hard · Advanced engineering</option>
+            <option value="unassessed">Not yet assessed</option>
+          </select>
+        </label>
+        <button id="clear-filters" class="button button-secondary" type="button" disabled>Clear filters</button>
+      </div>
+      <p id="difficulty-note" class="difficulty-explanation">Difficulty is for the whole build. You can contribute to individual tasks.</p>
+      <section class="project-list" id="project-list" aria-live="polite">
+        <p class="project-empty">Loading projects…</p>
       </section>
     </main>
   </div>
+  <script type="module" src="projects.js"></script>
 </body>
 </html>

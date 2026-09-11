@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operations · The Engineers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="admin-header">
+    <div>
+      <a class="brand" href="index.html">The Engineers</a>
+      <span class="environment">Project admin</span>
+    </div>
+    <a class="site-link" href="index.html">Public site <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <header class="page-intro">
+      <p class="kicker">Find it. Plan it. Build it.</p>
+      <h1>Projects worth building.</h1>
+      <p>Find the engineering work the world needs. Review the plan. Publish it so people can help build it.</p>
+    </header>
+    <p id="operations-notice" role="status" aria-live="polite"></p>
+    <section class="workspace">
+      <section class="search-panel" aria-labelledby="runs-heading">
+        <div class="section-head">
+          <div><h2 id="runs-heading">Find new projects</h2><p>Look for real problems and the engineering work that could solve them.</p></div>
+          <button id="run-search" type="button" disabled>Run search</button>
+        </div>
+        <p id="worker-progress" class="run-message" role="status">Checking search availability…</p>
+        <details class="search-options">
+          <summary>Search options</summary>
+          <div class="cycle-controls">
+            <label for="search-profile">What should we look at?</label>
+            <select id="search-profile">
+              <option value="frontier_scan">Find new frontier projects</option>
+              <option value="image_review">Review the five reference ideas</option>
+            </select>
+          </div>
+        </details>
+        <p class="search-note">Searches use paid AI services. Nothing is published until you approve it.</p>
+        <p id="run-message" class="run-message" role="status" aria-live="polite"></p>
+        <details id="search-results" class="search-results">
+          <summary>Search results <span id="search-summary">Loading…</span></summary>
+          <div id="search-cycles"><p class="empty">Loading search results…</p></div>
+        </details>
+      </section>
+
+      <section class="proposal-column" aria-labelledby="proposals-heading">
+        <div class="section-head">
+          <div><h2 id="proposals-heading">Projects</h2><p>Open a project to see why it matters and what needs building.</p></div>
+          <div class="proposal-filters" role="group" aria-label="Project filter">
+            <button class="filter active" data-filter="review" type="button" aria-pressed="true">To review <span id="filter-review">—</span></button>
+            <button class="filter" data-filter="published" type="button" aria-pressed="false">Published <span id="filter-published">—</span></button>
+            <button class="filter" data-filter="other" type="button" aria-pressed="false">Not ready <span id="filter-other">—</span></button>
+          </div>
+        </div>
+        <div id="proposals" class="proposal-list" aria-busy="true"><p class="empty">Loading projects…</p></div>
+      </section>
+    </section>
+    <details class="technical-details">
+      <summary>Technical details</summary>
+      <p>Search history and errors, if you need to check what happened.</p>
+      <p id="worker-details" class="run-message"></p>
+      <div id="runs" class="run-list"></div>
+    </details>
+  </main>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

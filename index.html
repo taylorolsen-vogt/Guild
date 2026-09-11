@@ -4,110 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Engineers · Guild</title>
-  <meta name="description" content="The Engineers homepage draft." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Open engineering projects for a more capable tomorrow. Find a build, contribute, and document what works." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="public-theme.css" />
 </head>
 <body class="home-page">
   <div class="page-shell">
     <header class="topbar">
-      <a class="brand" href="index.html">The Engineers</a>
+      <a class="brand" href="index.html" aria-label="The Engineers — Home" aria-current="page">The Engineers</a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="projects.html">Work</a>
-        <a href="mission.html">Collective</a>
-        <a href="mission.html">Research</a>
-        <a href="mission.html">Library</a>
-        <a href="mission.html">About</a>
-        <a href="mission.html">Mission Statement</a>
+        <a href="projects.html">Projects</a>
       </nav>
-      <a class="button button-primary topbar-action" href="projects.html">Report for work</a>
     </header>
 
     <main class="home-layout">
-      <section class="hero-copy">
-        <p class="eyebrow">A global engineering collective</p>
-        <h1>Engineers: we have work to do.</h1>
-        <p class="lede">
-          A unified place for real engineering work. Find the work, contribute when you can,
-          document what matters, and leave the collective better than you found it.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="projects.html">Report for work</a>
-          <a class="button button-secondary" href="projects.html">Explore projects</a>
+      <section class="home-mission" aria-labelledby="home-mission-title">
+        <p class="eyebrow">Mission statement</p>
+        <h1 id="home-mission-title">Calling all<br>engineers.</h1>
+        <div class="home-mission-body">
+          <p>The next industrial revolution is not going to be announced. It's going to be assembled — part by part, ticket by ticket, by people who got tired of waiting for permission.</p>
+          <p>Somebody has to write down everything the world still needs built. Nobody ever has. So here it is: real assemblies, in service right now, broken down part by part, every part with work on it. Open the list. Take a ticket. Cross it off for everyone.</p>
+          <p>Engineering is not a permission-based profession. No procurement cycle, no grant committee, no quarterly forecast; those are the machinery of red tape, and red tape is just a queue for something that was never going to get funded anyway. Stop asking the oligarchs to build your monuments. You are standing in a shop full of tools. Build them yourself.</p>
+          <p>There are takers and there are makers. The takers are already organized. We are not and that is the only thing they have on us. A million engineers acting alone is a bucket of crabs. A million engineers working the same list is an industrial revolution.</p>
+          <p>Pick a part. Build it. Publish it, so the next one of us starts where you stopped.</p>
+          <p class="home-mission-closing">The world has work to do.</p>
         </div>
+        <a class="button button-primary home-mission-action" href="projects.html">Browse all projects</a>
       </section>
 
-      <aside class="hero-visual" aria-label="Abstract illustration">
-        <div class="hero-empty" aria-hidden="true"></div>
-      </aside>
+      <section class="home-work" aria-labelledby="home-work-title">
+        <div class="home-work-head">
+          <h2 id="home-work-title">Featured projects</h2>
+          <a class="home-work-link" href="projects.html">View all projects</a>
+        </div>
+        <p class="home-work-intro">Find a project. Read the plan. Pick a task.</p>
+        <div id="featured-projects" class="featured-projects" aria-live="polite" aria-busy="true">
+          <p class="home-work-empty">Loading published projects…</p>
+        </div>
+        <noscript><p class="home-work-empty">Enable JavaScript to load published projects.</p></noscript>
+      </section>
     </main>
 
-    <section class="home-metrics" aria-label="Homepage metrics">
-      <div>
-        <strong>0</strong>
-        <span>Projects</span>
-      </div>
-      <div>
-        <strong>0</strong>
-        <span>Tasks</span>
-      </div>
-      <div>
-        <strong>0</strong>
-        <span>Countries</span>
-      </div>
-      <div>
-        <strong>0</strong>
-        <span>Categories</span>
-      </div>
-    </section>
-
-    <section class="featured-work" id="mission-statement" aria-label="Featured work placeholder">
-      <div class="featured-work-head">
-        <div>
-          <p class="eyebrow">Featured projects</p>
-          <h2>Real work. Real impact.</h2>
-          <p class="featured-copy">
-            This section is reserved for actual projects once they exist. Until then, the
-            layout stays clean and the numbers stay honest.
-          </p>
-        </div>
-        <a class="featured-link" href="projects.html">View all projects</a>
-      </div>
-
-      <div class="featured-rail">
-        <article class="featured-slot">
-          <div class="featured-slot-media"></div>
-          <p class="project-tag">Reserved</p>
-          <h3>Project slot one</h3>
-          <p>0 contributors</p>
-          <p>0 open tasks</p>
-        </article>
-        <article class="featured-slot">
-          <div class="featured-slot-media"></div>
-          <p class="project-tag">Reserved</p>
-          <h3>Project slot two</h3>
-          <p>0 contributors</p>
-          <p>0 open tasks</p>
-        </article>
-        <article class="featured-slot">
-          <div class="featured-slot-media"></div>
-          <p class="project-tag">Reserved</p>
-          <h3>Project slot three</h3>
-          <p>0 contributors</p>
-          <p>0 open tasks</p>
-        </article>
-        <article class="featured-slot">
-          <div class="featured-slot-media"></div>
-          <p class="project-tag">Reserved</p>
-          <h3>Project slot four</h3>
-          <p>0 contributors</p>
-          <p>0 open tasks</p>
-        </article>
-      </div>
-    </section>
+    <footer class="home-footer">
+      <span>One planet. A more capable tomorrow.</span>
+      <span>The Engineers</span>
+    </footer>
   </div>
+  <script type="module" src="home.js"></script>
 </body>
 </html>

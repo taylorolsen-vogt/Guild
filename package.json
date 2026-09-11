@@ -1,0 +1,38 @@
+{
+  "name": "the-engineers",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:web": "esbuild hardware-viewer.js --bundle --minify --format=esm --target=es2022 --legal-comments=linked --outfile=assets/hardware-viewer.js",
+    "preadmin": "npm run build:web",
+    "worker": "tsx pipeline/worker.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/**/*.test.ts",
+    "admin": "tsx admin/server.ts",
+    "db:migrate:sqlite": "tsx db/migrate-sqlite.ts",
+    "mission:assess": "tsx pipeline/assess-mission.ts",
+    "proposals:assess": "tsx pipeline/assess-proposals.ts",
+    "difficulty:assess": "tsx pipeline/assess-difficulty.ts",
+    "scheduled:discover": "tsx pipeline/scheduled.ts discover",
+    "scheduled:revalidate": "tsx pipeline/scheduled.ts revalidate",
+    "scout": "tsx pipeline/run.ts scout",
+    "investigate": "tsx pipeline/run.ts investigate",
+    "curate": "tsx pipeline/run.ts curate",
+    "approve": "tsx pipeline/run.ts approve",
+    "plan": "tsx pipeline/run.ts plan",
+    "list": "tsx pipeline/run.ts list"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "fast-xml-parser": "^5.2.5",
+    "postgres": "^3.4.9",
+    "three": "^0.186.0",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

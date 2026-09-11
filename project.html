@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project · The Engineers</title>
+  <meta name="description" content="Read the project plan, explore tasks, and see how to build and test it." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="public-theme.css" />
+</head>
+<body class="technical-page project-page">
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">The Engineers</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a aria-current="page" href="projects.html">Projects</a>
+      </nav>
+    </header>
+
+    <main class="project-detail">
+      <aside id="project-preview-notice" class="project-preview-notice" aria-label="Local unpublished preview" hidden>
+        <strong>Unpublished preview · only available through the local admin page</strong>
+        <a href="/admin">← Back to admin</a>
+      </aside>
+      <div id="project-detail" aria-busy="true">
+        <p class="project-empty" role="status">Loading project…</p>
+      </div>
+      <noscript><p class="project-empty">Enable JavaScript to read the project plan.</p></noscript>
+    </main>
+  </div>
+  <script type="module" src="project.js"></script>
+</body>
+</html>

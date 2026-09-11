@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "dist"
+  },
+  "include": ["admin/**/*.ts", "agents/**/*.ts", "db/**/*.ts", "lib/**/*.ts", "pipeline/**/*.ts", "schemas/**/*.ts", "sources/**/*.ts", "tests/**/*.ts"]
+}
