@@ -43,6 +43,68 @@ test("Claude gateway sends a Messages API request and validates JSON", async () 
   }
 });
 
+test("a schema-violating response gets one corrective retry that shows the model its own output and the exact failure", async () => {
+  const originalFetch = globalThis.fetch;
+  const originalKey = process.env.ANTHROPIC_API_KEY;
+  const originalModel = process.env.CLAUDE_MODEL;
+  process.env.ANTHROPIC_API_KEY = "test-key";
+  process.env.CLAUDE_MODEL = "test-claude-model";
+  const schema = z.object({ items: z.array(z.string()).max(2) });
+  const badContent = JSON.stringify({ items: ["a", "b", "c"] });
+  const requests: Array<Record<string, unknown>> = [];
+
+  globalThis.fetch = async (_input, init) => {
+    const body = JSON.parse(String(init?.body)) as Record<string, unknown>;
+    requests.push(body);
+    const text = requests.length === 1 ? badContent : JSON.stringify({ items: ["a", "b"] });
+    return new Response(JSON.stringify({ content: [{ type: "text", text }] }), {
+      status: 200, headers: { "content-type": "application/json" },
+    });
+  };
+
+  try {
+    const result = await generateStructured("Return JSON.", { input: true }, schema);
+    assert.deepEqual(result, { items: ["a", "b"] });
+    assert.equal(requests.length, 2);
+    const retryMessages = requests[1]?.messages as Array<{ role: string; content: string }>;
+    assert.equal(retryMessages.length, 3);
+    assert.equal(retryMessages[1]?.role, "assistant");
+    assert.equal(retryMessages[1]?.content, badContent);
+    assert.match(retryMessages[2]?.content ?? "", /items: Too big/);
+    assert.match(retryMessages[2]?.content ?? "", /Return corrected JSON only/);
+  } finally {
+    globalThis.fetch = originalFetch;
+    restoreEnvironment("ANTHROPIC_API_KEY", originalKey);
+    restoreEnvironment("CLAUDE_MODEL", originalModel);
+  }
+});
+
+test("a second consecutive schema violation still fails, without a third attempt", async () => {
+  const originalFetch = globalThis.fetch;
+  const originalKey = process.env.ANTHROPIC_API_KEY;
+  const originalModel = process.env.CLAUDE_MODEL;
+  process.env.ANTHROPIC_API_KEY = "test-key";
+  process.env.CLAUDE_MODEL = "test-claude-model";
+  const schema = z.object({ items: z.array(z.string()).max(2) });
+  let calls = 0;
+
+  globalThis.fetch = async () => {
+    calls++;
+    return new Response(JSON.stringify({ content: [{ type: "text", text: JSON.stringify({ items: ["a", "b", "c"] }) }] }), {
+      status: 200, headers: { "content-type": "application/json" },
+    });
+  };
+
+  try {
+    await assert.rejects(generateStructured("Return JSON.", { input: true }, schema), z.ZodError);
+    assert.equal(calls, 2);
+  } finally {
+    globalThis.fetch = originalFetch;
+    restoreEnvironment("ANTHROPIC_API_KEY", originalKey);
+    restoreEnvironment("CLAUDE_MODEL", originalModel);
+  }
+});
+
 test("Planner preserves the complete proposal for human review", async () => {
   const originalFetch = globalThis.fetch;
   const originalKey = process.env.ANTHROPIC_API_KEY;
